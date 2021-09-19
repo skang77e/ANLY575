@@ -1,0 +1,356 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  line-height: 1.25rem;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom style start */
+
+/* Topic 2 start */
+/* Task 2.1 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Task 2.2: This style would applied when head h5 style or inline style is not applied*/
+
+h5 {
+  background: #464646;
+  color: #fff;
+}
+
+/* Task 2.3 */
+
+.disclaimer {
+  background: blue;
+  color: chocolate;
+}
+
+.disclaimer {
+  background: red !important;
+  color: white !important;
+}
+
+/* Topic 3 start */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#header {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+section > h2 {
+  text-decoration: underline;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f0f0f0;
+  color: #041e42;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #d8d8d8;
+  color: #041e42;
+}
+
+img[alt="Graph"] {
+  width: 300px;
+  height: 300px;
+}
+
+.danger,
+.emergency-alert,
+.highlight {
+  background-color: red;
+}
+
+nav > ul > li > a {
+  color: #fff;
+}
+
+a[href$=".pdf"] {
+  background: #041e42;
+  color: #fff;
+  width: 200px;
+  display: block;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+/* Topic 4 start */
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ol,
+ul {
+  display: flex;
+}
+
+.bg-img {
+  background-image: url(/asssignment2.2/asset/img/silicon-valley.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+}
+
+.dark-bg {
+  color: #fff;
+  background: #63666a;
+}
+
+.box-shadowed-container {
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+header {
+  border: #00b5e2 3px solid;
+}
+
+nav > ul {
+  border: burlywood 3px solid;
+  padding: 10px;
+}
+
+nav > ul > li > a {
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+main {
+  border: #862633 5px solid;
+}
+
+nav {
+  border: #64a70b 5px solid;
+}
+footer {
+  border: #63666a 5px solid;
+  text-align: center;
+  padding: 20px 0;
+}
+#nav-item-header {
+  background-color: #00b5e2;
+  border: #00b5e2 2px solid;
+}
+#nav-item-main {
+  background-color: #862633;
+  border: #862633 2px solid;
+}
+#nav-item-nav {
+  background-color: #64a70b;
+  border: #64a70b 2px solid;
+}
+#nav-item-footer {
+  background-color: #63666a;
+  border: #63666a 2px solid;
+}
+nav > ul > li > a:hover {
+  background: white !important;
+  text-decoration: underline;
+}
+
+nav > ul > li > a:focus {
+  border: 3px solid #00b5e2 !important;
+}
+
+nav > ul > li > a:active {
+  border: 3px solid red !important;
+}
+
+nav > ul > li > a#nav-item-header:hover {
+  color: #00b5e2;
+}
+nav > ul > li > a#nav-item-main:hover {
+  color: #862633;
+}
+nav > ul > li > a#nav-item-nav:hover {
+  color: #64a70b;
+}
+
+nav > ul > li > a#nav-item-footer:hover {
+  color: #63666a;
+}
+
+.before-after:before {
+  content: "Prepended Text ";
+}
+
+.before-after:after {
+  content: " Appended Text";
+}
+
+.float-left {
+  margin-bottom: 30px;
+}
+.float-left .item {
+  background-color: darkcyan;
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+
+.float-right > span {
+  background-color: gainsboro;
+  width: 100px;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./asset/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Task 2.2: This line override h5 style from external file */
+      h5 {
+        background: #eee;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div><i class="fab fa-pied-piper-alt fa-3x"></i></div>
+
+      <nav id="nav" aria-label="Main menu">
+        <ul>
+          <li><a id="nav-item-header" href="/#header">Header</a></li>
+          <li><a id="nav-item-nav" href="#nav">Nav</a></li>
+          <li><a id="nav-item-main" href="#main">Main</a></li>
+          <li><a id="nav-item-footer" href="#footer">Footer</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <section>
+        <h2>Topic 2</h2>
+
+        <h3>Task 2.2</h3>
+        <!-- This line override h5 style from head -->
+        <h5 style="background: palevioletred; color: papayawhip">
+          This is h5 sentence with style from inline
+        </h5>
+        <h5>This is h5 sentence with style from head</h5>
+        <h5>
+          Comment out h5 style from head to see h5 style from external file
+        </h5>
+      </section>
+
+      <section>
+        <h3>Task 2.3</h3>
+
+        <h4 class="disclaimer">
+          This is disclaimer text, !important modifer would style this sentence
+          with red background and white text
+        </h4>
+      </section>
+      <section>
+        <h2>Topic 3</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Donor</th>
+              <th>Participation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Atlanta</td>
+              <td>53</td>
+              <td>20.45%</td>
+            </tr>
+            <tr>
+              <td>Boston</td>
+              <td>205</td>
+              <td>24.85%</td>
+            </tr>
+            <tr>
+              <td>Chicago</td>
+              <td>199</td>
+              <td>26.35%</td>
+            </tr>
+            <tr>
+              <td>New York</td>
+              <td>851</td>
+              <td>32.53%</td>
+            </tr>
+          </tbody>
+        </table>
+        <img alt="Graph" src="./asset/img/grouped-bar-example.png" />
+        <a href="/asssignment2.2/asset/pdf/sample.pdf">Preview PDF</a>
+      </section>
+      <section>
+        <h2>Topic 4</h2>
+        <ol>
+          <li>first</li>
+          <li>second</li>
+          <li>third</li>
+        </ol>
+        <div class="bg-img"></div>
+        <div class="box-shadowed-container">
+          This is container with box-shadow
+        </div>
+        <div class="dark-bg">This is container with dark background</div>
+        <div class="before-after">Text with pseudo element</div>
+        <br />
+        <div class="float-left">
+          <h4>Float left</h4>
+          <p>
+            Aenean ut eros et nisl sagittis vestibulum. Suspendisse pulvinar,
+            augue ac venenatis condimentum, sem libero volutpat nibh, nec
+            pellentesque velit pede quis nunc. Morbi vestibulum volutpat enim.
+            Vestibulum fringilla pede sit amet augue. Proin faucibus arcu quis
+            ante. Nullam tincidunt adipiscing enim. Vestibulum suscipit nulla
+            quis orci. Sed consequat, leo eget bibendum sodales, augue velit
+            cursus nunc, quis gravida magna mi a libero. Praesent adipiscing. In
+            auctor lobortis lacus. Vestibulum ante ipsum primis in faucibus orci
+            luctus et ultrices posuere cubilia Curae; In ac dui quis mi
+            consectetuer lacinia. Proin viverra, ligula sit amet ultrices
+            semper, ligula arcu tristique sapien, a accumsan nisi mauris ac
+            eros. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. In
+            consectetuer turpis ut velit. Nulla facilisi. Praesent nonummy mi in
+            odio. Praesent nonummy mi in odio. Cras non dolor. Ut non enim
+            eleifend felis pretium feugiat.
+            <span class="item">FLOAT LEFT ITEM</span>Cras risus ipsum, faucibus
+            ut, ullamcorper id, varius ac, leo. Praesent ac massa at ligula
+            laoreet iaculis. Phasellus nec sem in justo pellentesque facilisis.
+            Pellentesque auctor neque nec urna. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id
+            purus. In turpis. Proin pretium, leo ac pellentesque mollis, felis
+            nunc ultrices eros, sed gravida augue augue mollis justo. Quisque ut
+            nisi. Cras ultricies mi eu turpis hendrerit fringilla. Fusce ac
+            felis sit amet ligula pharetra condimentum. Ut varius tincidunt
+            libero.. Phasellus consectetuer vestibulum elit. Duis leo. Phasellus
+            accumsan cursus velit. Fusce egestas elit eget lorem. Praesent ut
+            ligula non mi varius sagittis. Nullam accumsan lorem in dui. Fusce a
+            quam. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id,
+            lorem. Vivamus elementum semper nisi. Donec orci lectus, aliquam ut,
+            faucibus non, euismod id, nulla. Nunc nulla. Donec mi odio, faucibus
+            at, scelerisque quis, convallis in, nisi.
+          </p>
+        </div>
+        <div class="float-right">
+          <h4>Float right</h4>
+          <p>
+            Nam adipiscing. Suspendisse non nisl sit amet velit hendrerit
+            rutrum. Fusce vel dui. Nam ipsum risus, rutrum vitae, vestibulum eu,
+            molestie vel, lacus. Aenean leo ligula, porttitor eu, consequat
+            vitae, eleifend ac, enim. Aenean commodo ligula eget dolor.
+            Suspendisse pulvinar, augue ac venenatis condimentum, sem libero
+            volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum
+            turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl.
+          </p>
+          <span class="item">First Item</span>
+          <span class="item">Second Item</span>
+          <p class="clear">
+            Nam adipiscing. Suspendisse non nisl sit amet velit hendrerit
+            rutrum. Fusce vel dui. Nam ipsum risus, rutrum vitae, vestibulum eu,
+            molestie vel, lacus. Aenean leo ligula, porttitor eu, consequat
+            vitae, eleifend ac, enim. Aenean commodo ligula eget dolor.
+            Suspendisse pulvinar, augue ac venenatis condimentum, sem libero
+            volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum
+            turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl.
+            Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <p>Copyright 2021 Jon Kang. All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
