@@ -207,9 +207,7 @@ img[alt="Graph"] {
   height: 300px;
 }
 
-.danger,
-.emergency-alert,
-.highlight {
+h2.danger.emergency-alert.highlight {
   background-color: red;
 }
 
@@ -239,7 +237,7 @@ ul {
 }
 
 .bg-img {
-  background-image: url(/asssignment2.2/asset/img/silicon-valley.png);
+  background-image: url("../img/silicon-valley.png");
   background-repeat: no-repeat;
   width: 100%;
   height: 400px;
