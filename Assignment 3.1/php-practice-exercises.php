@@ -344,8 +344,8 @@ TOPIC 3: CONDITIONAL LOGIC
 3.1 Write a simple if/else test to see if a variable contains any value, and echo the result to the web page.
 */
 echo $nl . '<p>Task 3.1</p>';
-
-if(true){
+$var3_1 = "hello world";
+if($var3_1){
     echo 'True statement<br>';
 }else{
     echo 'False statement<br>';
@@ -447,8 +447,7 @@ else{
 */
 
 echo $nl . '<p>Task 3.8</p>';
-
-if($var_string[0] == "A"){
+if(substr($var_string, 0, 1) == "A"){
     echo $nl . '<p>First character of a string ($var_string) is the letter "A"</p>';
 }
 else{
@@ -533,7 +532,7 @@ TOPIC 5: LOOPS
 */
 
 echo $nl . '<p>Task 5.1</p>';
-for ($i=0; $i <= count($programming_languages); $i++){
+for ($i=0; $i < count($programming_languages); $i++){
     echo $nl . '<p>' . $programming_languages[$i]  . '</p>';
 }
 
@@ -543,7 +542,7 @@ for ($i=0; $i <= count($programming_languages); $i++){
 
 echo $nl . '<p>Task 5.2</p>';
 $i =0;
-while($i <= count($programming_languages)) {
+while($i < count($programming_languages)) {
     echo $nl . '<p>' . $programming_languages[$i]  . '</p>';
     $i++;
 }
@@ -604,6 +603,8 @@ You don't have to write new logic here. Just take the same logic as in 5.5. and 
 
 echo $nl . '<p>Task 6.6</p>';
 function findKeyInArray($arrayToSearch, $keyword){
+    $nl = "\r\r";
+
     foreach($arrayToSearch as $key => $value){
         if ($keyword == $key) {
             echo $nl . '<p>Found key: '. $key.'</p>';
@@ -628,6 +629,8 @@ you want to send three parameters to it:
 
 echo $nl . '<p>Task 6.7</p>';
 function findKeyOrValueFromArray($arrayToSearch, $keyword, $keyOrValue){
+    $nl = "\r\r";
+
     if($keyOrValue =="key"){
         foreach($arrayToSearch as $key => $value){
             if ($keyword == $key) {
