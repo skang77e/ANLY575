@@ -107,7 +107,10 @@ label {
 
 input[type="text"],
 select#course_id,
-input#deadline {
+select#assignment_id,
+select#user_id,
+input#deadline,
+input#datetime {
   border: 1px solid #ccc;
   font-size: 16px;
   padding: 6px 12px;
