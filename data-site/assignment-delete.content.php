@@ -57,7 +57,7 @@ $assignmentData .= "<input type=\"hidden\" name=\"name\" id=\"name\" value=\"{$d
 $assignmentData .= "<input type=\"hidden\" name=\"description\" id=\"description\" value=\"{$data->description}\">\n";
 $assignmentData .= "<input type=\"hidden\" name=\"course_id\" id=\"course_id\" value=\"{$data->course_id}\">\n";
 $assignmentData .= "<input type=\"hidden\" name=\"deadline\" id=\"deadline\" value=\"{$data->deadline}\">\n";
-$assignmentData .= "<p>Are you sure you want to delete {$data->name} {$data->description}?</p>\n";
+$assignmentData .= "<p>Are you sure you want to delete {$data->name}?</p>\n";
 $confirm = "<p><a href=\"\"><input type=\"submit\" value=\"Delete\"> <a href=\"assignments.php\">Back to assignment list</a></p>\n";
 $formEnd = "</form>";
 

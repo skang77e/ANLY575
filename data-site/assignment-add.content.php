@@ -18,29 +18,40 @@ if (isset($_POST['name'])) {
 	$insertSql .= " VALUES (\"{$postName}\", \"{$postDescription}\", \"{$postCourseID}\", \"{$postDeadline}\");";
 	$insertId = $db->insert($insertSql);
 	
-	$sql = 'SELECT * FROM `assignments` WHERE `id` = ' . $insertId;
+	$sql = 'SELECT 	
+	`a`.`id`,
+	`a`.`name` as assignment_name,
+	`a`.`description`,
+	`a`.`deadline`,
+	`a`.`course_id`,
+	`c`.`name` as course_name
+	FROM `assignments` AS `a`
+	LEFT JOIN `courses` AS `c`
+	ON `a`.`course_id` = `c`.`id`
+	WHERE `a`.`id` = ' . $insertId;
+
 	$assignment = $db->object('Assignment', $sql);
 
 	// the above action returns an array, but we only need one object, so we'll limit the result to the first object
 	$assignment = $assignment[0];
 
 	$success = "<h2>Assignment Created</h2>\n";
-	$success .= "<p>Name: {$assignment->name}</p>\n";
+	$success .= "<p>Name: {$assignment->assignment_name}</p>\n";
 	$success .= "<p>Description: {$assignment->description}</p>\n";
-	$success .= "<p>Course ID: {$assignment->course_id}</p>\n";
+	$success .= "<p>Course Name: {$assignment->course_name}</p>\n";
 	$success .= "<p>Deadline: {$assignment->deadline}</p>\n";
 	$success .= "<p><a href=\"assignments.php\" class=\"button\">Back to assignment list</a></p>";
 	echo $success;
 	return;
 } 
 
-$sql = 'SELECT `id` FROM `courses`;';
-$course_ids = $db->fetchAll($sql);
+$sql = 'SELECT `id`, `name`  FROM `courses`;';
+$courses = $db->fetchAll($sql);
 $currentDate = date('Y-m-d');
 
 $options = '';
-foreach ($course_ids as $course_id) {
-	$options .= "<option value='$course_id->id'>$course_id->id</option>\n";
+foreach ($courses as $course) {
+	$options .= "<option value='$course->id'>$course->name</option>\n";
 };
 
 $formStart = "<form action=\"assignment-add.php\" method=\"post\">\n";

@@ -25,9 +25,10 @@ if (isset($_POST['id'])) {
 	$postFirstname = $_POST['firstname'];
 	$postLastname = $_POST['lastname'];
 	$postEmail = $_POST['email'];
+	$postApproved = $_POST['approved'];
 
 	//echo 'post';
-	if (!isset($_POST['id']) || !isset($_POST['firstname']) || !isset($_POST['lastname']) || !isset($_POST['email'])) { 
+	if (!isset($_POST['id']) || !isset($_POST['firstname']) || !isset($_POST['lastname']) || !isset($_POST['email']) || !isset($_POST['approved'])) { 
 		echo $postError;
 		return;
 	}
@@ -43,6 +44,7 @@ if (isset($_POST['id'])) {
 	$success .= "<p>First name: " . $user->firstname . "</p>\n";
 	$success .= "<p>Last name: {$user->lastname}</p>\n";
 	$success .= "<p>Email: {$user->email}</p>\n";
+	$success .= "<p>Approved: {$user->approved}</p>\n";
 	$success .= "<p><a href=\"users.php\" class=\"button\">Back to user list</a></p>";
 	echo $success;
 	return;
@@ -63,6 +65,6 @@ $form .= "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"{$data->id}\">";
 $form .= "<p><label for=\"firstname\">First name</label> <input type=\"text\" name=\"firstname\" id=\"firstname\" value=\"{$data->firstname}\"></p>";
 $form .= "<p><label for=\"lastname\">Last name</label> <input type=\"text\" name=\"lastname\" id=\"lastname\" value=\"{$data->lastname}\"></p>";
 $form .= "<p><label for=\"email\">Email</label> <input type=\"text\" name=\"email\" id=\"email\" value=\"{$data->email}\"></p>";
-
+$form .= "<p><label for=\"approved\">Approved</label> <input type=\"checkbox\" name=\"approved\" id=\"approved\"></p>";
 
 echo $formStart . $form . $formEnd;

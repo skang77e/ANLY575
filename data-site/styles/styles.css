@@ -63,6 +63,11 @@ nav a:focus {
 nav a:first {
 }
 
+nav div.innerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 main {
   background-color: #fff;
   padding: 20px 10px;

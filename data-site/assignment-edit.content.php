@@ -34,16 +34,26 @@ if (isset($_POST['id'])) {
 	}
 	$updateSql = "UPDATE `assignments` SET `name` = \"{$postName}\", `description` = \"{$postDescription}\", `course_id` = \"{$postCourseID}\", `deadline` = \"{$postDeadline}\" WHERE `id` = " . $_GET['id'];
 	$update = $db->query($updateSql);
-	$sql = 'SELECT * FROM `assignments` WHERE `id` = ' . $_POST['id'];
+	
+	$sql = 'SELECT 	
+		`a`.`id`,
+		`a`.`name` as assignment_name,
+		`a`.`description`,
+		`a`.`deadline`,
+		`a`.`course_id`,
+		`c`.`name` as course_name
+		FROM `assignments` AS `a`
+		LEFT JOIN `courses` AS `c`
+		ON `a`.`course_id` = `c`.`id`
+		WHERE `a`.`id` = ' . $_POST['id'];
 	$assignment = $db->object('Assignment', $sql);
 
 	// the above action returns an array, but we only need one object, so we'll limit the result to the first object
 	$assignment = $assignment[0];
-
 	$success = "<h2>Assignment Updated</h2>\n";
-	$success .= "<p>Name: " . $assignment->name . "</p>\n";
+	$success .= "<p>Name: " . $assignment->assignment_name . "</p>\n";
 	$success .= "<p>Description:" . $assignment->description . "</p>\n";
-	$success .= "<p>Course ID:" . $assignment->course_id . "</p>\n";
+	$success .= "<p>Course Name:" . $assignment->course_name . "</p>\n";
 	$success .= "<p>Deadline:" . $assignment->deadline . "</p>\n";
 	$success .= "<p><a href=\"assignments.php\" class=\"button\">Back to assignment list</a></p>";
 	echo $success;
@@ -60,15 +70,15 @@ $form = '';
 
 $data = $assignment[0];
 
-$course_id_sql = 'SELECT `id` FROM `courses`;';
-$course_ids = $db->fetchAll($course_id_sql);
+$courses_sql = 'SELECT `id`, `name` FROM `courses`;';
+$courses = $db->fetchAll($courses_sql);
 
 $options = '';
-foreach ($course_ids as $course_id) {
-	if($course_id->id == $data->course_id){
-		$options .= "<option value='$course_id->id' selected>$course_id->id</option>\n";
+foreach ($courses as $course) {
+	if($course->id == $data->course_id){
+		$options .= "<option value='$course->id' selected>$course->name</option>\n";
 	}else{
-		$options .= "<option value='$course_id->id'>$course_id->id</option>\n";
+		$options .= "<option value='$course->id'>$course->name</option>\n";
 	}
 };
 

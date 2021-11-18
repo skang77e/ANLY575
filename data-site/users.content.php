@@ -10,6 +10,7 @@ $tableStart .= "<th scope=\"col\">ID</th>\n";
 $tableStart .= "<th scope=\"col\">First name</th>\n";
 $tableStart .= "<th scope=\"col\">Last name</th>\n";
 $tableStart .= "<th scope=\"col\">Email</th>\n";
+$tableStart .= "<th scope=\"col\">Approved</th>\n";
 $tableStart .= "<th scope=\"col\">Actions</th>\n";
 $tableStart .= "</tr>\n";
 
@@ -23,6 +24,7 @@ foreach ($users as $user) {
 	$tableData .= "<td>{$user->firstname}</td>\n";
 	$tableData .= "<td>{$user->lastname}</td>\n";
 	$tableData .= "<td>{$user->email}</td>\n";
+	$tableData .= "<td>{$user->approved}</td>\n";
 	$tableData .= "<td><a href=\"user-edit.php?id={$user->id}\" class=\"icon-button\"><i class=\"fas fa-pencil-alt\" role=\"img\" aria-label=\"Edit\"></i></a> ";
 	$tableData .= "<a href=\"user-delete.php?id={$user->id}\" class=\"icon-button\"><i class=\"far fa-trash-alt\" role=\"img\" aria-label=\"Delete\"></i></a></td>\n";
 	$tableData .= "</tr>\n";

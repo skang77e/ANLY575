@@ -4,6 +4,8 @@ class User extends Base {
 	public $firstname;
 	public $lastname;
 	public $email;
+	public $password;
+	public $approved;
 	public $table;
 
 	function __construct() {
