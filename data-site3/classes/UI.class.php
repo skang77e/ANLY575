@@ -46,37 +46,39 @@ class UI extends Base {
 
 		return $label . $start . $optionList . $end;
 	}
+
+	// function to prerender table for logged in user
 	function prerenderAction(){
 		$db = new Database();
 
 		$session = new Session();
 		$loggedIn = $session->checkLoginStatus();
 		$users = $db->object('User');
-
-		$tableStart = "<table>\n<caption>&nbsp;</caption>\n<tr>\n";
-
 		if ($loggedIn) { 
+
+			$tableStart = "<table>\n<caption>&nbsp;</caption>\n<tr>\n";
+
 			$tableStart .= "<th scope=\"col\">Actions</th>\n"; 
-		} 
-		$tableStart .= "</tr>\n";
-		$tableEnd = "</table>\n";
-		$tableData = '';
+			$tableStart .= "</tr>\n";
+			$tableEnd = "</table>\n";
+			$tableData = '';
 
-		foreach ($users as $user) {
-			$tableData .= "<tr data-user-id=\"user-{$user->id}\">\n";
-			if ($loggedIn) { 
-				$tableData .= "<td><a href=\"user-edit.php?id={$user->id}\" class=\"icon-button\"><i class=\"fas fa-pencil-alt\" role=\"img\" aria-label=\"Edit\"></i></a> ";
-				$tableData .= "<a href=\"user-delete.php?id={$user->id}\" class=\"icon-button delete-user\" data-last-name=\"{$user->lastname}\" data-first-name=\"{$user->firstname}\" data-email=\"{$user->email}\" data-dialog-id=\"user-{$user->id}\"><i class=\"far fa-trash-alt\" role=\"img\" aria-label=\"Delete\"></i></a></td>\n";
+			foreach ($users as $user) {
+				$tableData .= "<tr data-user-id=\"user-{$user->id}\">\n";
+				if ($loggedIn) { 
+					$tableData .= "<td><a href=\"user-edit.php?id={$user->id}\" class=\"icon-button\"><i class=\"fas fa-pencil-alt\" role=\"img\" aria-label=\"Edit\"></i></a> ";
+					$tableData .= "<a href=\"user-delete.php?id={$user->id}\" class=\"icon-button delete-user\" data-last-name=\"{$user->lastname}\" data-first-name=\"{$user->firstname}\" data-email=\"{$user->email}\" data-dialog-id=\"user-{$user->id}\"><i class=\"far fa-trash-alt\" role=\"img\" aria-label=\"Delete\"></i></a></td>\n";
+				}
+				$tableData .= "</tr>\n";
 			}
-			$tableData .= "</tr>\n";
-		}
-		$addUser = '';
-		if ($loggedIn) {
+			$addUser = '';
 			$addUser = "<p><a href=\"user-add.php\" class=\"icon-button\"><i class=\"fas fa-plus-circle\"></i> Add user</a></p>";
+		
+			return $tableStart . $tableData . $tableEnd . $addUser;
 		}
-		return $tableStart . $tableData . $tableEnd . $addUser;
-
 	}
+
+	// function to show simple table of registered users 
 	function simpleTable($caption, array $headers, array $data, $attributes = null){
 		if (!$caption) {
 			echo ' Error: the caption of the table must not be empty.';
@@ -91,8 +93,11 @@ class UI extends Base {
 			echo ' Error: the data of the table must not be empty.';
 			return;
 		}
+
+		// Check for null conditions and assign empty value
 		$id = $attributes['id'] ?? '';
 		$class = $attributes['class'] ?? '';
+
 		$tableStart = "<table id='{$id}' class='{$class}'>\n<caption>{$caption}</caption>\n<tr>\n";
 
 		foreach ($headers as $header) {
@@ -115,6 +120,7 @@ class UI extends Base {
 		return $tableStart . $tableData . $tableEnd;
 	}
 
+	// function to return dialog html
 	function dialog() {
 		return '<div id="deque-dialog" class="deque-dialog" data-dialog-id>
 		<div class="deque-dialog-screen-wrapper"></div>

@@ -17,6 +17,8 @@ if (isset($_POST['firstname'])) {
 		return;
 	}
 
+	// Remove user add logic here to prevent duplicated user addition. 
+
 	$success = "<h2>User Created</h2>\n";
 	$success .= "<p>First name: {$postFirstname}</p>\n";
 	$success .= "<p>Last name: {$postLastname}</p>\n";
