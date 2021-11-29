@@ -19,4 +19,10 @@
         <li>CEO Woman - Indicates whether the CEO of the company is a woman (1 for "yes" or 0 for "no").</li>
     </ul>
     
-<p>With given features, I will answer questions such as: What percentage of companies have women ceo's? How many companies are newcomers? What percentage of companies have ceos who were also founders?</p>
+<p>With given features, I was able to find following: </p>
+<ul>
+    <li>Walmart is the largest company by revenue and almost 2 time larger than second/ third largest</li>
+    <li>Retailing is the sector with the most companies on the Fortune 500</li>
+    <li>3% of companies have CEOs who were also the founder of companies</li>
+    <li>8% of companies have CEOs who were woman.</li>
+</ul>

@@ -28,7 +28,8 @@ $page->footer 	= Base::renderExternalFile($footerPath);
 	<script src="<?PHP echo URL_ROOT . 'javascript/deque-patterns.min.js'; ?>" type="text/javascript"></script>
 	<script src="<?PHP echo URL_ROOT . 'javascript/script.js'; ?>" type="text/javascript"></script>
 	<script src="https://code.highcharts.com/highcharts.src.js"></script>
-
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	
 	<?php echo $page->cssFiles;?>
 	<?php echo $page->headStyles;?>
 </head>

@@ -17,8 +17,6 @@ $ui = new UI(); // if the UI class has not been called yet;
 // Call tables and dialog
 $table = $ui->simpleTable($caption, $headers, $data);
 
-
-
 $top20_data = array();
 
 for ($i = 0; $i <= 19; $i++) {
@@ -27,30 +25,10 @@ for ($i = 0; $i <= 19; $i++) {
 
 $top20_json = json_encode($top20_data); 
 
-// $test = [
-//     ['Shanghai', 24.2],
-//     ['Beijing', 20.8],
-//     ['Karachi', 14.9],
-//     ['Shenzhen', 13.7],
-//     ['Guangzhou', 13.1],
-//     ['Istanbul', 12.7],
-//     ['Mumbai', 12.4],
-//     ['Moscow', 12.2],
-//     ['São Paulo', 12.0],
-//     ['Delhi', 11.7],
-//     ['Kinshasa', 11.5],
-//     ['Tianjin', 11.2],
-//     ['Lahore', 11.1],
-//     ['Jakarta', 10.6],
-//     ['Dongguan', 10.6],
-//     ['Lagos', 10.6],
-//     ['Bengaluru', 10.3],
-//     ['Seoul', 9.8],
-//     ['Foshan', 9.3],
-//     ['Tokyo', 9.3]
-// ];
-// print("<pre>".print_r($top10_data,true)."</pre>");
-// print("<pre>".print_r($test,true)."</pre>");
+echo '<p>This page contains data about Fortune 500\'s business key financial information.<p>';
+echo '<p>From original dataset, I extracted Company Name, Rank, Revenue, Profit, and Newcomer.</p>';
+echo '<p>Out of 500 comapanies that I picked top 20 companies by revenue to create bar chart.</p>';
+echo '<p>X-axis represents the name of company while Y-axis represents revenue.</p>';
 
 echo '<div id="bar-chart"></div>';
 echo $table ;
@@ -62,7 +40,7 @@ Highcharts.chart('bar-chart', {
         type: 'column'
     },
     title: {
-        text: 'Top 20 Comanpy in the US by Revenue'
+        text: 'Top 20 Companies in the US by Revenue'
     },
     subtitle: {
         text: 'Source: <a href=\"https://fortune.com/fortune500/2020/search\">fortune.com</a>'

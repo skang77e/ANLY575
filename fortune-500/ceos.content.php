@@ -29,6 +29,10 @@ $woman_no_per = $woman_temp_data[0] * 2 / 10;
 
 // Call tables and dialog
 $table = $ui->simpleTable($caption, $headers, $data);
+echo '<p>This page contains data about Fortune 500\'s CEO information.<p>';
+echo '<p>From original dataset, I extracted CEO Founder, CEO Woman, and Company ID.</p>';
+echo '<p>CEO Founder and CEO Woman columns have answer with 0 for no and 1 for yes</p>';
+echo '<p>In out of 500 companies CEOs, 3% of CEOs are also the founder of companies and 8% of CEOs are woman<p>';
 
 echo '<div id="pie-chart1"></div>';
 echo '<div id="pie-chart2"></div>';
@@ -38,12 +42,14 @@ echo $table ;
 echo "
 <script>
 Highcharts.chart('pie-chart1', {
+    colors: ['#ED561B', '#DDDF00'],
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
         type: 'pie'
     },
+
     title: {
         text: 'Is the CEO of the company is also the founder?'
     },
@@ -81,6 +87,7 @@ Highcharts.chart('pie-chart1', {
 });
 
 Highcharts.chart('pie-chart2', {
+    colors: ['#FFF263', '#6AF9C4'],
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
